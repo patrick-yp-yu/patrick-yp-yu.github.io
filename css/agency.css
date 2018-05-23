@@ -217,7 +217,7 @@ header.masthead .intro-text .intro-heading {
     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
   header.masthead .intro-text .intro-heading {
-    font-size: 30px;
+    font-size: 75px;
     font-weight: 700;
     line-height: 75px;
     margin-bottom: 50px;
@@ -225,7 +225,7 @@ header.masthead .intro-text .intro-heading {
   }
 }
 
-.service-heading {
+.skill-heading {
   margin: 15px 0;
   text-transform: none;
 }
@@ -576,32 +576,33 @@ header.masthead .intro-text .intro-heading {
   }
 }
 
-.team-member {
+.about-member {
   margin-bottom: 50px;
   text-align: center;
 }
 
-.team-member img {
+.about-member img {
   width: 225px;
   height: 225px;
   border: 7px solid #fff;
 }
 
-.team-member h4 {
+.about-member h4 {
   margin-top: 25px;
   margin-bottom: 0;
   text-transform: none;
 }
 
-.team-member p {
+.about-member p {
   margin-top: 0;
 }
 
 section#contact {
-  background-color: #212529;
-  background-image: url("../img/map-image.png");
+background-color: #e8e8e8;
+/*  background-image: url("../img/sea.JPG");*/
   background-repeat: no-repeat;
   background-position: center;
+
 }
 
 section#contact .section-heading {
@@ -643,7 +644,7 @@ section#contact :-moz-placeholder {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-section#contact ::-moz-placeholder {
+section#contact ::-moz-placeholder { 
   font-weight: 700;
   color: #ced4da;
   /* Firefox 19+ */
@@ -700,3 +701,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 }
 
 
+.resumeImage img{
+    max-width: 100%;
+    max-height: 100%;    
+}
