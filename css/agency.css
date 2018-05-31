@@ -172,7 +172,7 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/header-bg.jpg");
+  background-image: url("../assets/header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -599,7 +599,7 @@ header.masthead .intro-text .intro-heading {
 
 section#contact {
 background-color: #e8e8e8;
-/*  background-image: url("../img/sea.JPG");*/
+/*  background-image: url("../assets/sea.JPG");*/
   background-repeat: no-repeat;
   background-position: center;
 
@@ -704,4 +704,66 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 .resumeImage img{
     max-width: 100%;
     max-height: 100%;    
+}
+
+.portfolio-modal .modal-content #SlimeVideo iframe {
+    width: 100%;
+}
+
+section#carousel .carousel-item img{
+    width: 100%;    
+}
+
+/* Carousel control */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 10%;
+    width: 20%;
+    outline: black;
+    background-color: rgba(254, 209, 55, 0.5);
+    background-size: 100%, 100%;
+/*
+    border-radius: 50%;
+    border: 1px solid black;
+*/
+}
+
+/* Carousel caption below the images */
+.caption-below {
+    text-align: center;
+}
+.caption-below h1 {
+    font: bold large;
+}
+.caption-below p {
+     margin-left: 20%;
+     margin-right: 20%;
+     font: small;
+ }
+
+ body {
+ margin-top: 90px;
+}
+
+/* Carousel indicator */
+.carousel-indicators li {
+/*
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+*/
+    background-color: rgba(254, 209, 55, 0.3);
+/*    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);    */
+}
+.carousel-indicators .active {
+/*
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+*/
+    background-color: rgba(254, 209, 55, 1);
 }
