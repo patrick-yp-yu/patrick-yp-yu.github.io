@@ -12,9 +12,11 @@ p {
   line-height: 1.75;
 }
 
+/*
 a {
   color: #fed136;
 }
+*/
 
 a:hover {
   color: #fec503;
@@ -172,7 +174,8 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../assets/header-bg.jpg");
+/*  background-image: url("../assets/header-bg.jpg");*/
+  background-image: url("../assets/sea.jpg");    
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -596,12 +599,17 @@ header.masthead .intro-text .intro-heading {
 .about-member p {
   margin-top: 0;
 }
-
 section#contact {
-background-color: #e8e8e8;
-/*  background-image: url("../assets/sea.JPG");*/
+    background-color: #777777;
+  background-image: url("../assets/road.jpg");    
   background-repeat: no-repeat;
-  background-position: center;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 
 }
 
