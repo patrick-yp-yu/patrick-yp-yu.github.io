@@ -81,7 +81,7 @@
                     <div class="about-member">
                         <img src="assets/about/MySticker3.png" width="200" class="logo rounded-circle mb-3" alt="My photo">
                         <h4>Yuan-Peng (Patrick)</h4>
-                        <h2 class="text-uppercase">Yu</h2>
+                        <h3 class="text-uppercase font-weight-bold">Yu</h3>
                         <p class="text-muted">Software Developer</p>
                         <!--
                         <ul class="list-inline social-buttons">
@@ -188,7 +188,7 @@
             </div>
             <div class="row">
 
-                <div class="card col-md-4 col-sm-6 portfolio-item">
+                <div class="card col-md-6 col-sm-6 portfolio-item">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
@@ -203,7 +203,7 @@
                     </div>
                 </div>
 
-                <div class="card col-md-4 col-sm-6 portfolio-item">
+                <div class="card col-md-6 col-sm-6 portfolio-item">
                     <a class="portfolio-link" href="proj2_Kickstarter_yu_y_final.html" target="_blank">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
@@ -218,7 +218,7 @@
                     </div>
                 </div>
 
-                <div class="card col-md-4 col-sm-6 portfolio-item">
+                <div class="card col-md-6 col-sm-6 portfolio-item">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
@@ -233,22 +233,24 @@
                     </div>
                 </div>
 
-                <!--
-                <div class="card col-md-4 col-sm-6 portfolio-item">
+
+                <div class="card col-md-6 col-sm-6 portfolio-item">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="assets/portfolio/04-thumbnail.jpg" alt="">
+                        <img class="img-fluid" src="assets/portfolio/proj4/proj4_thumb1.jpg" alt="Panorama Photo">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Proj4</h4>
-                        <p class="text-muted">Branding</p>
+                        <h4>Panorama Photo</h4>
+                        <p class="text-muted">Robot Vision Project</p>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
+
+                <!--             
+                <div class="card col-md-4 col-sm-6 portfolio-item">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
@@ -262,6 +264,7 @@
                         <p class="text-muted">Website Design</p>
                     </div>
                 </div>
+                
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
                         <div class="portfolio-hover">
@@ -332,7 +335,7 @@
     </footer>
 
 
-    <!-- Modal 1 -->
+    <!-- Modal 1: Automatic Map Initialization -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -347,7 +350,7 @@
                         <div class="col-lg-10 mx-auto">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
-                                <h2 class="text-uppercase">Automatic Map Initialization</h2>
+                                <h3 class="text-uppercase">Automatic Map Initialization</h3>
                                 <h4 class="text-left">Introduction</h4>
                                 <p class="text-left">We, human beings, use our eyes to identify where we are. How do robots or autonomous vehicles to find their position in an unexplored environment by using only camera sensors? Visual simultaneous localization and mapping (visual SLAM) is one of the algorithms to achieve the goal. In the features-based SLAM, we use distinct features in two corresponding images as landmarks to compute how much distance we moved.</p>
                                 <p class="text-justify">The project implements the automatic map initialization in ORB-SLAM. ORB-SLAM is the current state-of-the-art visual SLAM algorithm. The project goal is to automatically select a proper model to compute the progression distance based on different input scenes. In the two-view geometry, the model will be the homography matrix if the scene is dominated by planar objects whereas the model will be the fundamental matrix if the scene is dominated by non-planar objects. The implementation uses a score function to evaluate the model selection. After a proper model is selected, camera poses and the relative progression can be calculated.</p>
@@ -557,7 +560,7 @@
         </div>
     </div>
 
-    <!-- Modal 3 -->
+    <!-- Modal 3: Slime Fighter-->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -572,7 +575,7 @@
                         <div class="col-lg-10 mx-auto">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
-                                <h2 class="text-uppercase">Slime Fighter</h2>
+                                <h3 class="text-uppercase">Slime Fighter</h3>
                                 <p class="item-intro text-muted">A web browser-based multiplayer arena-fighting game</p>
                                 <h6>Watch this video presentation to know more about the game.</h6>
 
@@ -580,9 +583,8 @@
                                     <iframe width="712" height="400" src="https://www.youtube.com/embed/rjQkHCHQkD4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                 </div>
 
-                                <h2> </h2>
                                 <h4>Introduction</h4>
-                                <p class="text-left">Slime Fighter is a class project for CSCE 315 Programming Studio at Texas A&M University. The game is a web-based application. When the game server turns on, two or more players can join the game simply by entering the web address in their browser. Each player needs to fight against one another for victory.</p>
+                                <p class="text-left">Slime Fighter is a class project for CSCE 315 Programming Studio at Texas A&amp;M University. The game is a web-based application. When the game server turns on, two or more players can join the game simply by entering the web address in their browser. Each player needs to fight against one another for victory.</p>
                                 <h4>How to play</h4>
                                 <ul class="list-inline text-left" style="list-style-type:disc">
                                     <li>If you take 100% damage, you die.</li>
@@ -612,6 +614,75 @@
         </div>
     </div>
 
+    <!-- Modal 4: Panorama Photo -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h3 class="text-uppercase">Panorama Photo</h3>
+                                <p class="item-intro text-muted">Creates a photo with an ultra wide-angle view.</p>
+                                
+                                <h4 class="text-left">Introduction</h4>
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6"><img class="img-fluid mx-auto img-thumbnail" src="assets/portfolio/proj4/image01.jpg" alt="Scene 1"></div>
+                                    <div class="col-lg-6"><img class="img-fluid mx-auto img-thumbnail"  src="assets/portfolio/proj4/image00.jpg" alt="Scene 2"></div>    
+                                </div>
+                                
+                                <p class="text-left">Two images are taken in the same position before and after a camera rotation. How do we stitch or merge these images into one image? The goal of the project is to create a  photo with panoramic view.</p>
+                                
+                                <h4 class="text-left">Implementation</h4>
+                                <h5 class="text-left font-weight-bold">Step 1: find corresponding features</h5>
+                                <p class="text-left">The corresponding features are regarded as landmarks, and we could use these features to estimate camera poses. Here, we adopt SIFT, Scale-Invariant Feature Transform, to compare the corresponding features between two photos. SIFT algorithm can find distinct key-points in the images. In the image below, two key-points that connected by a line are the corresponding features. These connections show the overlap of the two images. We can find that most of the corresponding features are distributed between the small tree and the right-hand-side of the building.</p>
+                                <div class="col-lg-12"><img class="img-fluid mx-auto img-thumbnail" src="assets/portfolio/proj4/image_SIFT.jpg" alt="Compare by SIFT"></div>
+                                
+                                <h5 class="text-left font-weight-bold">Step 2: calculate the homography matrix</h5>
+                                <p class="text-left">When camera rotates, the relationship between the first image and the second image is a projective transformation. The homography matrix (a 3x3 matrix) is a linear mapping from the points in the first image to the points in the second image. We use the coordinates of the corresponding features to calculate the homography matrix. This method is called Direct Linear Transformation (DLT) algorithm. I implemented the DLT algorithm in C++, and you could refer to my 
+                                    <a href="https://github.com/patrick-yp-yu/Panorama/tree/master/src " target="_blank"><b>source code</b></a>
+                                for more details. In OpenCV, you could simply call the function, 
+                                <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html?highlight=calib#findhomography" target="_blank"><b>findHomography()</b></a>
+                                , to compute the homography matrix.</p>
+                                
+                                <h5 class="text-left font-weight-bold">Step 3: project points on an image</h5>
+                                <p class="text-left">After finding the homography matrix, we could map all the points in the second image to the first image. We use the OpenCV function, 
+                                <a href="https://docs.opencv.org/2.4/modules/imgproc/doc/geometric_transformations.html#warpperspective" target="_blank"><b>wrapPerspective()</b></a>
+                                , to fulfill the mapping computation. Finally, we create an panoramic photo as the image below.</p>
+                                <div class="col-lg-12"><img class="img-fluid mx-auto img-thumbnail" src="assets/portfolio/proj4/result_by_DLT.jpg" alt="Compare by SIFT"></div>
+                                <h4 class="text-left">Mathematic Induction</h4>
+                                <div class="text-left"><a href="assets/portfolio/proj4/web_proj4.pdf" target="_blank">Please refer to this link for the full details.</a></div>
+                                
+                                <hr>
+                                <h4 class="text-left">Development Tools</h4>
+                                <div class="row align-items-center">
+                                    <div class="col-md-4">
+                                        <img class="img-fluid mx-auto" width="150" src="assets/portfolio/proj4/cpp_logo.jpg" alt="C++">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img class="img-fluid mx-auto" width="150" src="assets/portfolio/proj4/OpenCV_logo.png" alt="OpenCV">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img class="img-fluid mx-auto" width="150" src="assets/portfolio/proj1/multipleViewGeometry.jpg" alt="MultipleView Geometry">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i>Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- End of my content.    -->
 
