@@ -235,7 +235,22 @@
                     </div>
                 </div>
 
-
+                <div class="card col-md-6 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal_EDC">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="assets/portfolio/proj_EDC/EDC_thumbnail.jpg" alt="Car image">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Environment Detecting Car</h4>
+                        <p class="text-muted"><b></b></p>
+                        <p class="text-muted">A remote control car that could explore an unknown environment and detect the surrounding obstacles</p>
+                    </div>
+                </div>
+               
                 <div class="card col-md-6 col-sm-6 portfolio-item">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
                         <div class="portfolio-hover">
@@ -252,6 +267,8 @@
                     </div>
                 </div>
 
+
+                               
                 <div class="card col-md-6 col-sm-6 portfolio-item">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
                         <div class="portfolio-hover">
@@ -259,7 +276,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid img-thumbnail" src="assets/portfolio/proj5/proj5_thumbnail.png" alt="Rectify perspective">
+                        <img class="img-fluid" src="assets/portfolio/proj5/proj5_thumbnail.png" alt="Rectify perspective">
                     </a>
                     <div class="portfolio-caption">
                         <h4>Rectify image perspective</h4>
@@ -268,6 +285,8 @@
                     </div>
                 </div>
 
+
+                               
                 <!--             
                 <div class="card col-md-4 col-sm-6 portfolio-item">
                     <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
@@ -633,6 +652,63 @@
         </div>
     </div>
 
+    <!-- Modal: Environment Detecting Car-->
+    <div class="portfolio-modal modal fade" id="portfolioModal_EDC" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h3 class="text-uppercase">Environment Detecting Car</h3>
+                                <p class="item-intro text-muted">A remote control car that could explore an unknown environment and detect the surrounding obstacles</p>
+                                <h6>Watch this video presentation to know more about the project.</h6>
+
+                                <div id="EDC_Video">
+                                    <iframe width="712" height="400" src="https://www.youtube.com/embed/0PxnD8M8x0E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                </div>
+
+                                <hr>
+                                <h4 class="text-left">Introduction</h4>
+                                <p class="text-left">This is a class project for CSCE 462 Microcomputer Systems at Texas A&amp;M University. We develop a remote control car that could explore an unknown environment and detect the surrounding obstacles. The rotatable camera on the car help we identify directions when we are controlling the car. The LIDAR perceives objects and walls that are close to the car so that we could build a map. The project is implemented with Raspberry Pi 3.</p>
+                                <p class="text-left text-muted">(The project triggers my strong interests in computer vision and SLAM, and inspired me to conduct more research about autonomous vehicles.)</p>
+                                
+                                <h4 class="text-left">Function</h4>
+                                <ul class="list-inline text-left" style="list-style-type:disc">
+                                    <li>A WiFi connection is built between the Raspberry Pi on the car and our computer. A TCP server runs on Raspberry Pi. The client on our computer sends commands to control both the car movements and camera rotations.</li>
+                                    <li>The remote control car can perform car movements: forward, backward, left, and right. Car speed is adjustable.</li>
+                                    <li>Display the real-time video. The video is streaming from the camera on the car so we could remotely observe the surroundings of the car.</li>
+                                    <li>The LIDAR enables the car to sense obstacles and walls, and we use the result to build a map. The LIDAR could detect a 360° plane from 0.15 meter to 12 meters.</li>
+                                    <li>The black points on the map are the current detecting results from the LIDAR. The blue points are the previously saved map.</li>
+                                </ul>
+                                
+                                <h4 class="text-left">Development Tools</h4>
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <img class="img-fluid mx-auto" src="assets/portfolio/proj2/python-logo.png" alt="Python Mark">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <img class="img-fluid mx-auto" src="assets/portfolio/proj_EDC/RPi-Logo-Landscape-SCREEN.png" alt="Raspberry Pi Mark">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i>Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+       
     <!-- Modal 4: Panorama Photo -->
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
