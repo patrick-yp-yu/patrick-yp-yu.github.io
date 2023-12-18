@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectify Image Perspective</title>
+    
+    <!-- Favicons -->
+    <link href="assets/img/my_favicon_32x32.png" rel="icon">
+    
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/css/proj_panorama.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Use old version of bootstrap for btn-breadcrumb -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col-12"> -->
+                <!-- <div class="btn-group btn-breadcrumb breadcrumb-default">
+                    <a href="#" class="btn btn-default">Home</a>
+                    <a href="#" class="btn btn-default visible-lg-block visible-md-block">Snippets</a>
+                    <div class="btn btn-primary"><b>Item Actual</b></div>
+                </div> -->
+            <!-- </div> -->
+            <div class="btn-group btn-breadcrumb">
+                <a href="index.html" class="btn btn-default"><i class='bx bxs-home'></i> Patrick's Home</a>
+                <a href="index.html#portfolio" class="btn btn-default">Portfolio</a>
+                <a href="#" class="btn btn-primary">Rectify Image Perspective</a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12 mx-auto proj-title">
+                <h2 class="text-uppercase">Rectify Image Perspective</h2>
+                <p class="item-intro text-muted">Adjust the perspective of an image into a front-facing angle</p>
+            </div> 
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-3"></div>
+                <div class="col-lg-6 col-md-6 mx-auto">
+                    <img class="img-fluid mx-auto img-thumbnail" src="assets/portfolio/proj_perspective/proj5_thumbnail2.png" alt="proj_perspective thumbnail">
+                </div>
+                <div class="col-lg-3 col-md-3"></div>
+            </div> 
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <h3 class="text-left"><i class='bx bxs-pencil' ></i> Introduction</h3>
+                <p class="text-left">The goal of the project is to align the perspective of an image into a front view. Here, we use a four-point rectification method to correct the perspective. That is, we select the four points that will be the vertices of a rectangle when we face the rectangle orthogonally.</p>
+
+
+                <h3 class="text-left"><i class='bx bxs-pencil' ></i> Implementation</h3>
+                <h4 class="text-left font-weight-bold">Step 1: find the four points </h4>
+                <p class="text-left">In this case, we would like to transform the book cover to a front view. The four points are the vertices of a book cover. The yellow circles indicate the selected points.</p>
+            </div> 
+    </div> 
+    
+    <div class="container">
+        <div class="row">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-3"></div>
+                <div class="col-lg-6 col-md-6 mx-auto">
+                    <img class="img-fluid mx-auto img-thumbnail" src="assets/portfolio/proj_perspective/book_Original.jpg" alt="Book Image before perspective rectification">
+                </div>
+                <div class="col-lg-3 col-md-3"></div>
+            </div> 
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <h4 class="text-left font-weight-bold">Step 2: calculate the homography matrix</h4>
+                <p class="text-left">The homography matrix (a 3x3 matrix) is a linear mapping from the points in the first image to the points in the second image. In this example, the second image will be a front view of the book cover. We use the coordinates of the four points to calculate the homography matrix. I implemented in C++, and you could refer to my
+                    <a href="assets/portfolio/proj_perspective/perspective.cpp" target="_blank"><b>source code</b></a> for more details. (In OpenCV, you could simply call the function,
+                    <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html?highlight=calib#findhomography" target="_blank"><b>findHomography()</b></a>, to compute the homography matrix. In my source code, I use the OpenCV function to verify my result.)</p>
+
+                <h4 class="text-left font-weight-bold">Step 3: project points on an empty image</h4>
+                <p class="text-left">After finding the homography matrix, we perform a linear transform and map all points in the first image to the front-view image. We use the OpenCV function,
+                    <a href="https://docs.opencv.org/2.4/modules/imgproc/doc/geometric_transformations.html#warpperspective" target="_blank"><b>wrapPerspective()</b></a>, to fulfill the mapping computation. After the perspective rectification, the image below is the front view of the book cover.</p>
+            </div> 
+    </div>
+
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-4"></div>
+                <div class="col-lg-4 col-md-4 mx-auto">
+                    <img class="img-fluid mx-auto img-thumbnail" src="assets/portfolio/proj_perspective/book_Rectified.jpg" alt="Book Image after perspective rectification">
+                </div>
+                <div class="col-lg-4 col-md-4"></div>
+            </div> 
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <hr>
+                <h3 class="text-left">Mathematic Induction</h3>
+                <div class="text-left">
+                    <a href="assets/portfolio/proj_perspective/math_perspective.pdf" target="_blank">You are welcome to refer to my report for mathematic details.</a>
+                </div>
+            </div>
+            <div class="col-lg-12 mx-auto">
+                <hr>
+                <h3 class="text-left">Application</h3>
+                <p class="text-left">We often use the perspective rectification to correct the distortion of wide-angle camera lens. Here is the example. We would like to move the perspective to the four points on the wall. The yellow circles indicates the selected four points. It will look like that we are facing directly to the front side of the concrete wall. The result shows as below. </p>
+            </div> 
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 mx-auto">
+                <img class="img-fluid mx-auto img-thumbnail" src="assets/portfolio/proj_perspective/wall_Original.jpg" alt="Compare by SIFT">
+                <p class="text-center">Before the perspective rectification.</p>
+            </div>
+            <div class="col-lg-6 col-md-6 mx-auto">
+                <img class="img-fluid mx-auto img-thumbnail" src="assets/portfolio/proj_perspective/wall_Rectified.jpg" alt="Compare by SIFT">
+                <p class="text-center">After the perspective rectification.</p>
+            </div>
+            <div class="text-left">
+                <a href="assets/portfolio/proj_perspective/perspective_wall.cpp" target="_blank"><b>My source code</b></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <hr>
+                <h4 class="text-left">How to compile c++ file that includes OpenCV library?</h4>
+                <p>g++ -ggdb perspective_wall.cpp -o perspective_wall `pkg-config --cflags --libs opencv` </p>
+                
+                <hr>
+                <h3 class="text-left">Development Tools</h3>
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <img class="img-fluid mx-auto" width="150" src="assets/portfolio/proj_perspective/cpp_logo.jpg" alt="C++">
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-fluid mx-auto" width="150" src="assets/portfolio/proj_perspective/OpenCV_logo.png" alt="OpenCV">
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-fluid mx-auto" width="150" src="assets/portfolio/proj_perspective/multipleViewGeometry.jpg" alt="MultipleView Geometry">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <footer id="footer">
+        <div class="container text-center">
+          <h5>Author: Patrick Yu</h4>
+          <p class="text-muted mb-0 py-2">© All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+</body>
+</html>

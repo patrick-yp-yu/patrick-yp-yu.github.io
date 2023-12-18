@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panorama Photo</title>
+    
+    <!-- Favicons -->
+    <link href="assets/img/my_favicon_32x32.png" rel="icon">
+    
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/css/proj_panorama.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Use old version of bootstrap for btn-breadcrumb -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col-12"> -->
+                <!-- <div class="btn-group btn-breadcrumb breadcrumb-default">
+                    <a href="#" class="btn btn-default">Home</a>
+                    <a href="#" class="btn btn-default visible-lg-block visible-md-block">Snippets</a>
+                    <div class="btn btn-primary"><b>Item Actual</b></div>
+                </div> -->
+            <!-- </div> -->
+            <div class="btn-group btn-breadcrumb">
+                <a href="index.html" class="btn btn-default"><i class='bx bxs-home'></i> Patrick's Home</a>
+                <a href="index.html#portfolio" class="btn btn-default">Portfolio</a>
+                <a href="#" class="btn btn-primary">Panorama Photo</a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+
+                <div class="proj-title">
+                    <h2 class="text-uppercase">Panorama Photo</h2>
+                    <p class="item-intro text-muted">Creates a photo with an ultra wide-angle view.</p>
+                </div>
+
+
+                <!-- Project Details Go Here -->
+                <h3 class="text-left"><i class='bx bxs-pencil' ></i> Introduction</h4>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6"><img class="img-fluid mx-auto img-thumbnail" src="assets/portfolio/proj_panorama/image01.jpg" alt="Scene 1"></div>
+                    <div class="col-lg-6 col-md-6"><img class="img-fluid mx-auto img-thumbnail" src="assets/portfolio/proj_panorama/image00.jpg" alt="Scene 2"></div>
+                </div>
+
+                <p class="text-left">Two images are taken in the same position before and after a camera rotation. How do we stitch or merge these images into one image? The goal of the project is to create a photo with panoramic view.</p>
+                
+                <hr>
+                <h3 class="text-left"><i class='bx bxs-pencil' ></i> Implementation</h4>
+                <h4 class="text-left font-weight-bold">Step 1: find corresponding features</h5>
+                <p class="text-left">The corresponding features are regarded as landmarks, and we could use these features to estimate camera poses. Here, we adopt SIFT, Scale-Invariant Feature Transform, to compare the corresponding features between two photos. SIFT algorithm can find distinct key-points in the images. In the image below, two key-points that connected by a line are the corresponding features. These connections show the overlap of the two images. We can find that most of the corresponding features are distributed between the small tree and the right-hand-side of the building.</p>
+                <div class="col-lg-12"><img class="img-fluid mx-auto img-thumbnail" src="assets/portfolio/proj_panorama/image_SIFT.jpg" alt="Compare by SIFT"></div>
+
+                <h4 class="text-left font-weight-bold">Step 2: calculate the homography matrix</h5>
+                <p class="text-left">When camera rotates, the relationship between the first image and the second image is a projective transformation. The homography matrix (a 3x3 matrix) is a linear mapping from the points in the first image to the points in the second image. We use the coordinates of the corresponding features to calculate the homography matrix. This method is called Direct Linear Transformation (DLT) algorithm. I implemented the DLT algorithm in C++, and you could refer to my
+                    <a href="https://github.com/patrick-yp-yu/Panorama/tree/master/src " target="_blank"><b>source code</b></a> for more details. In OpenCV, you could simply call the function,
+                    <a href="https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html?highlight=calib#findhomography" target="_blank"><b>findHomography()</b></a> , to compute the homography matrix.</p>
+
+                <h4 class="text-left font-weight-bold">Step 3: project points on an image</h5>
+                <p class="text-left">After finding the homography matrix, we could map all the points in the second image to the first image. We use the OpenCV function,
+                    <a href="https://docs.opencv.org/2.4/modules/imgproc/doc/geometric_transformations.html#warpperspective" target="_blank"><b>wrapPerspective()</b></a> , to fulfill the mapping computation. Finally, we create an panoramic photo as the image below.</p>
+                <div class="col-lg-12"><img class="img-fluid mx-auto img-thumbnail" src="assets/portfolio/proj_panorama/result_by_DLT.jpg" alt="Compare by SIFT"></div>
+                
+                <hr>
+                <h3 class="text-left"><i class='bx bxs-pencil' ></i> Mathematic Induction</h4>
+                <div class="text-left"><a href="assets/portfolio/proj_panorama/web_proj4.pdf" target="_blank">Please refer to this link for the full details.</a></div>
+
+                <hr>
+                <h3 class="text-left"><i class='bx bxs-pencil' ></i> Development Tools</h4>
+                <div class="row align-items-center">
+                    <div class="col-sm-4">
+                        <img class="img-fluid mx-auto" width="150" src="assets/portfolio/proj_panorama/cpp_logo.jpg" alt="C++">
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="img-fluid mx-auto" width="150" src="assets/portfolio/proj_panorama/OpenCV_logo.png" alt="OpenCV">
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="img-fluid mx-auto" width="150" src="assets/portfolio/proj_panorama/multipleViewGeometry.jpg" alt="MultipleView Geometry">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="container text-center">
+          <h5>Author: Patrick Yu</h5>
+          <p class="text-muted mb-0 py-2">© All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+</body>
+</html>
