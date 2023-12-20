@@ -3,6 +3,12 @@
   background-color: #f7f8f9; 
 }
 
+/* Change button color in Breadcrumb */
+.btn-primary {
+  background-color: #0563bb;
+  /* border-color: ; */
+}
+
 .proj-title {
   margin-top: 50px;
   margin-bottom: 30px;
@@ -11,20 +17,6 @@
 
 p {
   margin:30px;
-}
-
-#footer {
-  padding: 20px;
-  background-color: #f7f8f9;
-  color: #45505b;
-  font-size: 14px;
-  text-align: center;
-}
-
-/* Change button color*/
-.btn-primary {
-  background-color: #0563bb;
-  /* border-color: ; */
 }
 
 .container-spacing {
@@ -115,3 +107,10 @@ p {
 }
 /* play-button */
 
+#footer {
+  padding: 20px;
+  background-color: #f7f8f9;
+  color: #45505b;
+  font-size: 14px;
+  text-align: center;
+}
