@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViT Image Classification</title>
+    
+    <!-- Favicons -->
+    <link href="assets/img/my_favicon_32x32.png" rel="icon">
+    
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="assets/css/proj_vit_classifiation.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 Kit -->
+    <script src="https://kit.fontawesome.com/4a46fb2a59.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- Breadcrumb -->
+    <div id="starter">
+        <div class="container">
+            <div class="row ">
+                <div class="col-12  ">
+                    <div class="btn-group">
+                        <a href="index.html" class="btn btn-outline-secondary"><i class='bx bxs-home'></i> Patrick's Home</a>
+                        <a href="index.html#portfolio" class="btn btn-outline-secondary">Portfolio</a>
+                        <a href="#" class="btn btn-primary" aria-current="page">Vision Transformer - Image Classification </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 mx-auto proj-title">
+                <h1>Vision Transformer (ViT) For Image Classification</h1>
+                <p class="text-muted"><b>Identify images of different dog breeds.</b></p>
+            </div>
+        </div> 
+
+    </div>
+    
+    <!-- Introduction -->
+    <hr>
+    <div class="container container-spacing">
+        <div class="row">
+            <h3>Introduction</h3>
+            <!-- <div class="col-lg-1 col-md-1"></div> -->
+            <div class="col-lg-12 col-md-12">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <p class="card-text">
+                        The reserach paper, "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale", introduced a Vision Transformer into computer vision, delivering state-of-the-art performance without relying on convolutional neural networks (CNNs). This innovation draws inspiration from the highly regarded Transformer architecture in natural language processing domain, where Transformers have outperformed CNNs. The goal of the project is to implement the paper and grasp the essential concepts in the Vision Transformer. We constructed the Vision Transformer (ViT) from scratch using PyTorch, conducted training with augmented data, and subsequently applied the model to perform image classification to identify dog breeds.
+                        </p>
+                        <p class="card-text">The figure below displays our project pipeline.</p>
+                    </div>
+                    <img src="assets/portfolio/proj_vit_classification/vig_dogs.png" alt="Project Pipeline" class="card-img-bottom img-center-maxW"  >
+                </div>
+            </div>
+            <!-- <div class="col-lg-1 col-md-1"></div> -->
+        </div>
+    </div>
+    
+    <!-- Goals -->
+    <div class="container container-spacing">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header fs-1" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <i class="fa-solid fa-bullseye fa-lg"></i>&nbsp;&nbsp
+                    <b>What are our tasks?</b>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" >
+                <div class="accordion-body">
+                    <!-- Table -->
+                    <table class="table">
+                        <thead>
+                            <tr >
+                            <th scope="col"></th>
+                            <th scope="col">Task Goal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- row1 -->
+                            <tr class="table-light">
+                                <th scope="row">1.</th>
+                                <td>Build the Vision Transformer (ViT) from scratch. Implement each layers in the ViT.</td>
+                            </tr>
+                            <!-- row 2 -->
+                            <tr class="">
+                                <th scope="row">2.</th>
+                                <td>Apply Transfer Learning. Use the pretrained-ViT and make a comparison.</td>
+                            </tr>
+                            <!-- row 3 -->
+                            <tr class="table-light">
+                                <th scope="row">3.</th>
+                                <td>Perform image classification on a given image. Identify the breed type of the dog in the image. </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fa-solid fa-database fa-lg"></i>&nbsp;&nbsp
+                    <b>What dataset is used?</b>
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" >
+                <div class="accordion-body">
+                    We use Stanford Dogs Dataset. The dataset contains 20,850 images for 120 breeds of dogs. The dataset is also a subset of a large scale image database, ImageNet. You can download it from either one of the two sites.
+                    <ul>
+                        <li>
+                            <a href="http://vision.stanford.edu/aditya86/ImageNetDogs/" target="_blank">http://vision.stanford.edu/aditya86/ImageNetDogs/</a>
+                        </li>
+                        <li>
+                            <a href="https://www.kaggle.com/datasets/jessicali9530/stanford-dogs-dataset/" target="_blank">https://www.kaggle.com/datasets/jessicali9530/stanford-dogs-dataset/</a>
+                        </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <i class="fa-solid fa-network-wired fa-lg"></i>&nbsp;&nbsp
+                    <b>How do you train the model?</b>
+                </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" >
+                    <div class="accordion-body">
+                        We train the project on NVIDIA RTX A6000, and the training time is about 20 minutes.
+                    </div>
+                </div>
+              </div>            
+        </div>
+    </div>
+
+    <!-- Vision Transformer -->
+    <hr>
+    <div class="container container-spacing">
+        <div class="row">
+            <h3>Vision Transformer (ViT)</h3>
+            <div class="card-group">
+                <div class="card border-0">
+                    <img src="assets/portfolio/proj_vit_classification/ViT_model.png" alt="ViT_model" class="card-img-top img-center-maxW">
+                    <div class="card-body">
+                        <h5>Model Overview</h5>
+                        <p class="card-text">This is the model overview of the Vision Transformer. A Vision Transformer model will contain three parts.</p>
+
+                        <!-- Table -->
+                        <table class="table">
+                            <thead>
+                                <tr >
+                                <th scope="col">Block</th>
+                                <th scope="col">Functions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- row1 -->
+                                <tr class="table-danger">
+                                    <th scope="row">Patch + Position Embedding inputs</th>
+                                    <td>The input image will be divided into a sequence of patches. The size of each patch is 16 x16. The image patches are flattened to 1D embedding through a trainable linear projection. Subsequently, a class embedding and position embeddings are concatenated with the embedded patches. While the position embeddings capture retain spatial information of the image, the class embedding serves as the label for image classification.</td>
+                                </tr>
+                                <!-- row 2 -->
+                                <tr class="table-secondary">
+                                    <th scope="row">Transformer Encoder</th>
+                                    <td>The encoder comprises a multiheaded self-attention layer (MSA) and a multilayer perceptron (MLP). Transformer Encoders can be stacked to create a more complex model. Further details about the encoder will be provided below. </td>
+                                </tr>
+                                <!-- row 3 -->
+                                <tr class="table-warning">
+                                    <th scope="row">MLP Head</th>
+                                    <td>The output from Transformer Encoders, served as image representations, will go into MLP Head. In the context of image classification, it is reffered as a "classifier head". The output will be the class of image classification. The architecture of the MLP Head is implemented by a MLP.</td>
+                                </tr>
+                            </tbody>
+                        </table>   
+                         
+
+                    </div>
+                </div>
+            </div>
+            <!-- group2 -->
+            <div class="card-group">
+                <div class="card border-0">
+                    <img src="assets/portfolio/proj_vit_classification/transformerEncoder.png" alt="Transformer Encoder" class="card-img-bottom img-center-maxW" style="width: 200px;">                    
+                    <div class="card-body">
+                        <p class="card-text">Inside a Transformer Encoder block, it contains multiple components.</p>
+                    </div>
+
+                </div>
+                <div class="card border-0">
+                    <div class="card-body">
+                        <h5>MLP</h5>
+                        <p class="card-text">A multilayer perceptron.</p>
+                        <h5>Multi-Head Attention (MSA)</h5>
+                        <p class="card-text">The attention mechanism plays a pivotal role in the Transformer model, as introduced in the paper "Attention Is All You Need. Multi-Head Attention allows an attention mechanism to run several times in parallel.</p>
+                        <h5>Norm</h5>
+                        <p class="card-text">Layer Normalization (Norm) will be applied before the input of every block. It is used to regularize a neural network to prevent overfitting.</p>
+                        <h5>Residual Connection</h5>
+                        <p class="card-text">Residual connections (skip connections) will be applied after every block. It overcomes vanishing gradients, and improve the stability of a deep neural network. It is proposed by the paper "Deep Residual Learning for Image Recognition".</p>
+                    </div>
+                </div> 
+
+            </div>            
+        </div>
+    </div>    
+    
+    <!-- Training Result 1 -->
+    <hr>
+    <div class="container container-spacing">
+        <div class="row">
+            <h3>ViT Training Results</h3>
+            <p>After building the model from scratch, here are our training results.</p>
+            <div class="card-group">
+                <div class="card border-0">
+                    <img src="assets/portfolio/proj_vit_classification/LossPlot.png" alt="LossPlot" class="card-img-top img-center-maxW" style="width: 400px;">
+                </div>
+                <div class="card border-0">
+                    <img src="assets/portfolio/proj_vit_classification/AccuracyPlot.png" alt="AccuracyPlot" class="card-img-top img-center-maxW" style="width: 400px;"> 
+                </div>
+            </div>
+            <div class="card-group">
+                <div class="card border-0">
+                    <img src="assets/portfolio/proj_vit_classification/prediction1.png" alt="prediction1" class="card-img-top img-center-maxW" style="width: 400px;">
+                </div>
+                <div class="card border-0">
+                    <img src="assets/portfolio/proj_vit_classification/prediction2.png" alt="prediction2" class="card-img-top img-center-maxW" style="width: 400px;">
+                </div>
+            </div>   
+            <div class="card-group">
+                <div class="card border-0">
+                    <img src="assets/portfolio/proj_vit_classification/prediction3.png" alt="prediction3" class="card-img-top img-center-maxW" style="width: 400px;">
+                </div>
+                <div class="card border-0">
+                    <div class="card-body">
+                        <h5><mark>Accuracy on test data: 43.846%</mark></h5>
+                        <hr>
+                        <h5>Analysis:</h5>
+                        <p class="card-text"> </p>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item d-flex justify-content-between align-items-start">&nbsp 
+                                For the ViT model that we started from scratch, the trained result does not good enough. The final accuracy on the test data only reaches 43.8%. When we make prediction on test images, only one result is correct. 
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">&nbsp 
+                                From the training/validation plots, the decreasing trend of the training loss has reached a plateau. The accuracy curves are unstable, and accuracy values are low. The plots show that our model is underfitting. 
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">&nbsp 
+                                This could be caused by the limited size of our dataset for training the model. Even with data augmentation, our model comprises only about 25 hundred images, whereas the original paper leveraged large scale datasets such as ImageNet-21k and JFT-300M. Unfortunately, our computational resources restrict us from training on these large scale datasets. Thus, we need to take advantage of the pretrained model to perform a transfer learning. 
+                            </li>
+                        </ol>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Training Result 2 -->
+    <hr>
+    <div class="container container-spacing">
+        <div class="row">
+            <h3>Apply Transfer Learning:</h3>
+            <h3>Pretrained-ViT Training Results</h3>
+            <p>After building the model from scratch, here are our training results.</p>
+            <div class="card-group">
+                <div class="card border-0">
+                    <img src="assets/portfolio/proj_vit_classification/LossPlot_pViT.png" alt="LossPlot" class="card-img-top img-center-maxW" style="width: 400px;">
+                </div>
+                <div class="card border-0">
+                    <img src="assets/portfolio/proj_vit_classification/AccuracyPlot_pViT.png" alt="AccuracyPlot" class="card-img-top img-center-maxW" style="width: 400px;"> 
+                </div>
+            </div>
+            <div class="card-group">
+                <div class="card border-0">
+                    <img src="assets/portfolio/proj_vit_classification/prediction_pViT.png" alt="prediction_pViT" class="card-img-top img-center-maxW" style="width: 400px;">
+                </div>
+                <div class="card border-0">
+                    <img src="assets/portfolio/proj_vit_classification/prediction_pViT2.png" alt="prediction_pViT2" class="card-img-top img-center-maxW" style="width: 400px;">
+                </div>
+            </div>            
+            <div class="card-group">
+                <div class="card border-0">
+                    <img src="assets/portfolio/proj_vit_classification/prediction_pViT3.png" alt="prediction_pViT3" class="card-img-top img-center-maxW" style="width: 400px;">
+                </div>
+                <div class="card border-0">
+                    <div class="card-body">
+                        <h5><mark>Accuracy on test data: 97.44%</mark></h5>
+                        <hr>
+                        <h5>Analysis:</h5>
+                        <p class="card-text"> </p>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item d-flex justify-content-between align-items-start">&nbsp 
+                                To employ a pretrained model from torchvision.models, we have to use the specific transform that is adopted in the pretrained model. The image dataset need to undergo the same transformation process as the original training data utilized in the pretrained models. Thus, the images here are processed. 
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start">&nbsp 
+                                The training/validation plots shows that loss curves keep decreasing and accuracy curves keep rising. The final accuracy on the test data are 97.44%. For image classification on the test images, the identifying results are all correct. 
+                            </li>                     
+                            <li class="list-group-item d-flex justify-content-between align-items-start">&nbsp 
+                                When we adopt the pretrained weights and ViT model, the test accuracy for image classification task become precise. This model perform well even though the scale of our training dataset is small.
+                            </li>
+                        </ol>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>      
+    
+
+    <!-- Go to the code html  -->
+    <hr>
+    <div class="container container-spacing">
+        <h3>Source Code Link</h3>
+        <div class="row">
+            <div class="play-button d-grid gap-2 col-8 mx-auto">
+                <a href="assets/portfolio/proj_vit_classification/vit_classification.html" class="btn btn-outline-secondary btn-lg" target="_blank">
+                    <!-- span is used for animation -->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Review more details in the source code
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Development -->
+    <hr>
+    <div class="container container-spacing">
+        <div class="row">
+            <h3>Development</h3>
+            <div class="card-group">
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <h1><i class="fa-brands fa-github fa-lg"></i></h1>
+                        <p class="card-title ">
+                            <a href="https://github.com/patrick-yp-yu/vit_classification" target="_blank">Project GitHub</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <h1><i class="fa-brands fa-python fa-lg"></i></h1>
+                        <p class="card-title">Python</p>
+                    </div>
+                </div> 
+                <div class="card border-0">
+                    <div class="card-body text-center">
+                        <h1><img src="assets/portfolio/proj_vit_classification/198px-PyTorch_logo_icon.png" alt="PyTorch" width="40"></h1>
+                        <p class="card-title">PyTorch</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reference -->
+    <div class="container container-spacing">
+        <div class="row">
+            <h3>Reference</h3>
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item">
+                    <a href="https://arxiv.org/abs/2010.11929"  target="_blank">An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://arxiv.org/abs/1706.03762"  target="_blank">Attention Is All You Need</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="https://www.learnpytorch.io/08_pytorch_paper_replicating/#08-pytorch-paper-replicating"  target="_blank">PyTorch Paper Replicating</a>
+                </li>                
+            </ol>
+        </div>
+    </div>
+
+
+
+
+    <div id="footer">
+        <div class="container text-center">
+          <h5>Author: Patrick Yu</h5>
+          <p class="text-muted mb-0 py-2">© All rights reserved.</p>
+        </div>
+    </div>
+    <!-- End Footer -->
+
+    <!-- Script files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
