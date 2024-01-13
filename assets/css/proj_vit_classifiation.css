@@ -132,3 +132,7 @@ p {
   align-items: center;
   height:300px;
 }
+
+.accordion-button {
+  cursor: pointer;
+}
